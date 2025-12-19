@@ -1,0 +1,2676 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>我在家乡过大年 · 春节活动</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: #ffffff;
+      color: #3b1c17;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    button { border: none; background: none; }
+
+    .page-newyear {
+      max-width: 480px;
+      margin: 0 auto;
+      padding-bottom: 24px;
+      background:
+        linear-gradient(to bottom, hsl(359, 86%, 38%) 0, #b30d10 36%, #7b0b0b 60%, #3b0505 100%);
+      box-shadow: 0 0 0 1px rgba(255, 243, 211, .06);
+    }
+
+    .section {
+      padding: 16px 20px 10px;
+    }
+    .sec-header {
+      text-align: center;
+    }
+    .sec-header h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #ffd77a;
+    }
+    .sec-sub {
+      font-size: 12px;
+      color: #ffe9ba;
+      margin-top: 4px;
+      text-align: center;
+    }
+
+    .card {
+      background: rgba(50, 4, 4, .75);
+      border-radius: 12px;
+      padding: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, .5);
+      position: relative;
+      overflow: hidden;
+    }
+    .card + .card { margin-top: 8px; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 10px;
+      color: #6b1309;
+      background: linear-gradient(120deg, #ffcf6f, #ffe49a);
+    }
+
+    .h-scroll {
+      display: flex;
+      overflow-x: auto;
+      padding: 8px 0 4px;
+      gap: 8px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .h-scroll::-webkit-scrollbar { display: none; }
+
+    .album-card {
+      width: 96px;
+      flex: 0 0 auto;
+      border-radius: 10px;
+      background: linear-gradient(145deg, #6c0508, #9c1418);
+      padding: 6px;
+      position: relative;
+    }
+    .album-cover {
+      width: 100%;
+      border-radius: 8px;
+      background: #ffd77a;
+      height: 80px;
+    }
+    .album-title {
+      margin-top: 4px;
+      font-size: 11px;
+      color: #ffefe0;
+      line-height: 1.2;
+    }
+    .tag-chip {
+      display: inline-block;
+      margin-top: 2px;
+      font-size: 10px;
+      padding: 1px 5px;
+      border-radius: 999px;
+      background: rgba(255,215,122,.16);
+      color: #ffd77a;
+    }
+
+    .sound-item {
+      font-size: 12px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: rgba(255, 248, 230, .12);
+      color: #ffe9ba;
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      gap: 8px;
+    }
+    .sound-item-text {
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .sound-item-btn {
+      flex: 0 0 auto;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: rgba(255,215,122,.3);
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .sound-item-btn::before {
+      content: "▶";
+      font-size: 10px;
+      color: #ffd77a;
+      margin-left: 2px;
+    }
+
+    .btn-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: #6b1309;
+      background: linear-gradient(135deg, #ffedb1, #ffd77a);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, .45);
+      letter-spacing: .5px;
+    }
+
+    /* 模块1 头图 */
+    .section-hero {
+      padding: 0 0 8px;
+      position: relative;
+    }
+    .hero-wrapper {
+      position: relative;
+      border-radius: 0 0 26px 26px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .7);
+    }
+    .hero-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top,
+          rgba(39, 0, 0, .88) 0,
+          rgba(39, 0, 0, .78) 18%,
+          rgba(39, 0, 0, .3) 38%,
+          transparent 60%);
+    }
+    .hero-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 16px 20px 20px;
+      z-index: 2;
+    }
+    .hero-content .sec-header {
+      margin-bottom: 12px;
+    }
+    .hero-content .sec-header h2 {
+      color: #ffd77a;
+      text-shadow: 0 2px 8px rgba(0,0,0,.6);
+    }
+    .hero-content .sec-sub {
+      color: #ffeccc;
+      text-shadow: 0 1px 4px rgba(0,0,0,.5);
+    }
+    .hero-content .btn-pill {
+      font-size: 18px;
+      font-weight: 700;
+      padding: 10px 20px;
+    }
+
+    /* 模块2 玩法 */
+    .card-map img {
+      border-radius: 16px;
+      border: 1px solid rgba(255, 222, 166, .4);
+    }
+    .map-desc {
+      font-size: 12px;
+      color: #ffeccc;
+      margin-top: 8px;
+    }
+    .btn-explore {
+      margin: 10px auto 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      min-width: 120px;
+    }
+    .btn-fortune {
+      font-size: 10px;
+      color: #6b1309;
+      opacity: .85;
+    }
+
+    /* 模块3 任务 */
+    .task-list {
+      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .prize-card {
+      margin-bottom: 6px;
+    }
+    .prize-scroll {
+      overflow: hidden;
+      position: relative;
+      padding: 8px 0 4px;
+    }
+    .prize-scroll-wrapper {
+      display: flex;
+      gap: 12px;
+      animation: prize-scroll 30s linear infinite;
+      width: fit-content;
+    }
+    .prize-scroll-wrapper:hover {
+      animation-play-state: paused;
+    }
+    @keyframes prize-scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+    .prize-scroll-group {
+      display: flex;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .prize-item {
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 70px;
+    }
+    .prize-item img {
+      width: 60px;
+      height: 60px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 2px solid rgba(255,215,122,.4);
+    }
+    .prize-name {
+      font-size: 11px;
+      color: #ffeccc;
+      margin-top: 4px;
+      text-align: center;
+      line-height: 1.2;
+    }
+    .task-item {
+      background: rgba(42, 2, 2, .9);
+      border-radius: 999px;
+      padding: 8px 10px 8px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid rgba(255,215,122,.55);
+    }
+    .task-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .task-title {
+      font-size: 13px;
+      color: #ffe9ba;
+    }
+    .task-progress {
+      font-size: 11px;
+      color: #ffeccc;
+      opacity: .9;
+    }
+    .task-reward {
+      font-size: 12px;
+      color: #ffd77a;
+      font-weight: 600;
+    }
+    .btn-task {
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: #5a1009;
+      background: linear-gradient(135deg, #ffe39e, #ffc85d);
+    }
+
+    /* 模块4 大咖 */
+    .star-card {
+      border-radius: 16px;
+      padding: 10px;
+      background: linear-gradient(135deg, rgba(86, 4, 4, .92), rgba(140, 18, 16, .92));
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .7);
+    }
+    .star-main {
+      display: flex;
+      gap: 10px;
+    }
+    .star-avatar-wrap {
+      position: relative;
+      width: 68px;
+      height: 68px;
+      flex: 0 0 auto;
+    }
+    .star-avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 18px;
+      object-fit: cover;
+    }
+    .star-window-frame {
+      position: absolute;
+      inset: -3px;
+      border-radius: 20px;
+      border: 3px solid #d51f1a;
+      box-shadow:
+        0 0 0 2px rgba(255, 242, 217, .9),
+        0 0 0 5px rgba(204, 64, 32, .35);
+      pointer-events: none;
+    }
+    .star-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .star-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffedc0;
+    }
+    .star-tagline {
+      font-size: 12px;
+      color: #ffd77a;
+      margin-top: 2px;
+    }
+    .star-album-main {
+      display: flex;
+      align-items: center;
+      margin-top: 6px;
+      gap: 8px;
+    }
+    .star-album-main .album-cover {
+      width: 52px;
+      height: 52px;
+      background: #ffd77a;
+    }
+    .star-album-main .album-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .star-album-main .album-title {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .star-album-main .album-sub {
+      font-size: 11px;
+      color: #ffeccc;
+      margin-top: 2px;
+    }
+
+    /* 大咖头像 Tab */
+    .star-tabs {
+      margin-top: 8px;
+    }
+    .star-tab-avatars {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding-bottom: 4px;
+    }
+    .star-avatar-btn {
+      flex: 0 0 auto;
+      background: none;
+      border: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #ffeccc;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .star-avatar-btn .star-avatar-wrap {
+      margin-bottom: 4px;
+    }
+    .star-avatar-name {
+      margin-top: 2px;
+    }
+    .star-avatar-btn.active .star-window-frame {
+      box-shadow:
+        0 0 0 2px rgba(255, 242, 217, .9),
+        0 0 0 5px rgba(204, 64, 32, .55);
+    }
+    .star-detail-panels {
+      margin-top: 10px;
+    }
+    .star-detail {
+      display: none;
+    }
+    .star-detail.active {
+      display: block;
+    }
+
+    /* 模块5 一城一乡音 */
+    .video-card {
+      margin-top: 8px;
+    }
+    .video-wrapper {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .video-wrapper video,
+    .video-wrapper img {
+      width: 100%;
+      display: block;
+    }
+    .video-play-btn {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #ffeac4, #f1aa2d);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 18px rgba(138, 23, 14, .5);
+    }
+    .video-play-btn::before {
+      content: "";
+      border-style: solid;
+      border-width: 10px 0 10px 16px;
+      border-color: transparent transparent transparent #7b120d;
+      margin-left: 3px;
+    }
+    .video-desc {
+      font-size: 12px;
+      color: #ffeccc;
+      margin-top: 6px;
+    }
+
+    /* 模块6 国风大典 */
+    .section-guofeng .sec-sub {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+    .section-guofeng .sec-sub::before {
+      content: "线下活动";
+      font-size: 10px;
+      padding: 1px 6px;
+      border-radius: 999px;
+      background: rgba(255,215,122,.2);
+      color: #ffd77a;
+    }
+
+    /* Tabs 通用 */
+    .tabs {
+      margin-top: 10px;
+    }
+    .tab-headers {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding-bottom: 4px;
+    }
+    .tab-header {
+      flex: 0 0 auto;
+      font-size: 12px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(248, 209, 135, .7);
+      color: #ffeccc;
+      background: rgba(86, 4, 4, .6);
+      white-space: nowrap;
+    }
+    .tab-header.active {
+      background: linear-gradient(135deg, #ffedb1, #ffd77a);
+      color: #6b1309;
+      border-color: transparent;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, .5);
+    }
+    .tab-panels {
+      margin-top: 8px;
+    }
+    .tab-panel {
+      display: none;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+
+    .tab-desc {
+      font-size: 12px;
+      color: #ffeccc;
+      margin-bottom: 6px;
+    }
+    .tab-bottom-title {
+      font-size: 12px;
+      color: #ffd77a;
+      margin-top: 10px;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    /* 模块8 全家听乐呵 */
+    .section-family .tab-header {
+      border-radius: 999px;
+    }
+
+    /* 模块9 欢聚一堂·播客话题 */
+    .topic-list {
+      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .topic-item {
+      border-radius: 14px;
+      padding: 10px 10px 8px;
+      background: rgba(46, 3, 3, .95);
+      border: 1px solid rgba(255,215,122,.5);
+    }
+    .topic-tag {
+      font-size: 12px;
+      color: #ffd77a;
+      font-weight: 600;
+    }
+    .topic-tag::before {
+      content: "#";
+      margin-right: 1px;
+    }
+    .topic-desc {
+      font-size: 12px;
+      color: #ffeccc;
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+
+    /* 模块10 新年许愿 */
+    .wish-banner {
+      margin-top: 8px;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, .8);
+    }
+    .wish-banner img { width: 100%; height: auto; }
+    .wish-overlay-text {
+      position: absolute;
+      left: 12px;
+      bottom: 12px;
+      color: #fff6db;
+      text-shadow: 0 1px 4px rgba(0,0,0,.4);
+    }
+    .wish-overlay-text h3 {
+      font-size: 16px;
+      font-weight: 700;
+    }
+    .wish-overlay-text p {
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    /* 锚点导航 */
+    .section-nav {
+      padding: 8px 20px;
+      background: #b30d10;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+    .nav-anchors {
+      display: flex;
+      overflow-x: auto;
+      gap: 8px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .nav-anchors::-webkit-scrollbar { display: none; }
+    .nav-anchor-item {
+      flex: 0 0 auto;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      color: #ffeccc;
+      background: rgba(86, 4, 4, .8);
+      border: 1px solid rgba(255,215,122,.3);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .nav-anchor-item:active {
+      background: linear-gradient(135deg, #ffedb1, #ffd77a);
+      color: #6b1309;
+    }
+
+    /* 限时免费听 1行横划 */
+    .free-albums-scroll {
+      display: flex;
+      overflow-x: auto;
+      gap: 8px;
+      padding: 8px 0 4px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .free-albums-scroll::-webkit-scrollbar { display: none; }
+
+    /* 欢聚一堂轮播 */
+    .topic-carousel {
+      margin-top: 8px;
+      position: relative;
+    }
+    .topic-carousel-wrapper {
+      overflow: hidden;
+      border-radius: 14px;
+    }
+    .topic-carousel-track {
+      display: flex;
+      transition: transform 0.3s ease;
+    }
+    .topic-carousel-item {
+      flex: 0 0 100%;
+      min-width: 0;
+    }
+    .topic-carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .topic-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255,215,122,.4);
+      border: none;
+      padding: 0;
+      cursor: pointer;
+    }
+    .topic-dot.active {
+      background: #ffd77a;
+      width: 20px;
+      border-radius: 999px;
+    }
+
+    /* 更多精彩模块 */
+    .more-tabs-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .more-tab-header {
+      padding: 8px 4px;
+      border-radius: 10px;
+      border: 1px solid rgba(248, 209, 135, .7);
+      color: #ffeccc;
+      background: rgba(86, 4, 4, .6);
+      font-size: 12px;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .more-tab-header.active {
+      background: linear-gradient(135deg, #ffedb1, #ffd77a);
+      color: #6b1309;
+      border-color: transparent;
+    }
+    .more-album-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .more-album-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      border-radius: 12px;
+      background: rgba(46, 3, 3, .8);
+      border: 1px solid rgba(255,215,122,.3);
+    }
+    .more-album-cover {
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      flex: 0 0 auto;
+      object-fit: cover;
+    }
+    .more-album-info {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .more-album-title {
+      font-size: 13px;
+      color: #ffeccc;
+      font-weight: 600;
+      line-height: 1.3;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
+    .more-album-desc {
+      font-size: 11px;
+      color: #ffeccc;
+      opacity: .7;
+      line-height: 1.3;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
+    .more-album-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 10px;
+      color: #ffeccc;
+      opacity: .6;
+    }
+    .more-album-btn {
+      flex: 0 0 auto;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      color: #6b1309;
+      background: linear-gradient(135deg, #ffedb1, #ffd77a);
+      border: none;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    /* 底部小提示 */
+    .page-footer {
+      padding: 12px 16px 20px;
+      text-align: center;
+      font-size: 11px;
+      color: #f0c790;
+    }
+
+    @media (min-width: 480px) {
+      .page-newyear {
+        border-radius: 28px;
+        margin: 12px auto 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-newyear">
+
+    <!-- 模块1&2 合并：头图 + 点亮归乡路·步步生福 -->
+    <section class="section section-hero" id="anchor-hero">
+      <div class="hero-wrapper">
+        <img src="春节活动-我在家乡过大年/头图2.png" alt="我在家乡过大年" class="hero-img" />
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <div class="sec-header">
+            <h2>点亮归乡路·步步生福</h2>
+            <p class="sec-sub">完成任务，点亮回家地图，解锁新年惊喜</p>
+          </div>
+          <button class="btn-pill btn-explore">
+            <span>去做任务 积攒福气</span>
+            <span class="btn-fortune">剩余福气值5</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 锚点导航 -->
+    <section class="section section-nav">
+      <div class="nav-anchors">
+        <a href="#anchor-tasks" class="nav-anchor-item">积攒福气</a>
+        <a href="#anchor-stars" class="nav-anchor-item">大咖祝福</a>
+        <a href="#anchor-free" class="nav-anchor-item">限时免费</a>
+        <a href="#anchor-cityvoice" class="nav-anchor-item">城市乡音</a>
+        <a href="#anchor-guofeng" class="nav-anchor-item">国风盛典</a>
+        <a href="#anchor-citytour" class="nav-anchor-item">城市漫游</a>
+        <a href="#anchor-family" class="nav-anchor-item">爆笑新春</a>
+        <a href="#anchor-podcast" class="nav-anchor-item">欢聚一堂</a>
+        <a href="#anchor-wish" class="nav-anchor-item">新年许愿</a>
+        <a href="#anchor-more" class="nav-anchor-item">更多精彩</a>
+      </div>
+    </section>
+
+    <!-- 模块3：做任务·攒福气 -->
+    <section class="section section-tasks" id="anchor-tasks">
+      <div class="sec-header">
+        <h2>做任务·攒福气</h2>
+        <p class="sec-sub">每天一点小坚持，攒满福气好礼到家</p>
+      </div>
+
+      <!-- 奖品列表 -->
+      <div class="card prize-card">
+        <div class="badge">活动奖品池</div>
+        <div class="prize-scroll">
+          <div class="prize-scroll-wrapper">
+            <div class="prize-scroll-group">
+              <div class="prize-item">
+                <img src="春节活动-我在家乡过大年/奖品.png" alt="奖品" />
+                <p class="prize-name">iPhone 手机</p>
+              </div>
+              <div class="prize-item">
+                <img src="春节活动-我在家乡过大年/奖品.png" alt="奖品" />
+                <p class="prize-name">苹果电脑</p>
+              </div>
+              <div class="prize-item">
+                <img src="春节活动-我在家乡过大年/奖品.png" alt="奖品" />
+                <p class="prize-name">金条</p>
+              </div>
+              <div class="prize-item">
+                <img src="春节活动-我在家乡过大年/奖品.png" alt="奖品" />
+                <p class="prize-name">茅台酒</p>
+              </div>
+              <div class="prize-item">
+                <img src="春节活动-我在家乡过大年/奖品.png" alt="奖品" />
+                <p class="prize-name">游戏机</p>
+              </div>
+              <div class="prize-item">
+                <img src="春节活动-我在家乡过大年/奖品.png" alt="奖品" />
+                <p class="prize-name">月票</p>
+              </div>
+              <div class="prize-item">
+                <img src="春节活动-我在家乡过大年/奖品.png" alt="奖品" />
+                <p class="prize-name">旅游门票</p>
+              </div>
+              <div class="prize-item">
+                <img src="春节活动-我在家乡过大年/奖品.png" alt="奖品" />
+                <p class="prize-name">纪念品</p>
+              </div>
+              <div class="prize-item">
+                <img src="春节活动-我在家乡过大年/奖品.png" alt="奖品" />
+                <p class="prize-name">书本</p>
+              </div>
+              <div class="prize-item">
+                <img src="春节活动-我在家乡过大年/奖品.png" alt="奖品" />
+                <p class="prize-name">餐具套装</p>
+              </div>
+            </div>
+            <!-- 复制一份实现无缝循环 -->
+            <div class="prize-scroll-group">
+              <div class="prize-item">
+                <img src="春节活动-我在家乡过大年/奖品.png" alt="奖品" />
+                <p class="prize-name">iPhone 手机</p>
+              </div>
+              <div class="prize-item">
+                <img src="春节活动-我在家乡过大年/奖品.png" alt="奖品" />
+                <p class="prize-name">苹果电脑</p>
+              </div>
+              <div class="prize-item">
+                <img src="春节活动-我在家乡过大年/奖品.png" alt="奖品" />
+                <p class="prize-name">金条</p>
+              </div>
+              <div class="prize-item">
+                <img src="春节活动-我在家乡过大年/奖品.png" alt="奖品" />
+                <p class="prize-name">茅台酒</p>
+              </div>
+              <div class="prize-item">
+                <img src="春节活动-我在家乡过大年/奖品.png" alt="奖品" />
+                <p class="prize-name">游戏机</p>
+              </div>
+              <div class="prize-item">
+                <img src="春节活动-我在家乡过大年/奖品.png" alt="奖品" />
+                <p class="prize-name">月票</p>
+              </div>
+              <div class="prize-item">
+                <img src="春节活动-我在家乡过大年/奖品.png" alt="奖品" />
+                <p class="prize-name">旅游门票</p>
+              </div>
+              <div class="prize-item">
+                <img src="春节活动-我在家乡过大年/奖品.png" alt="奖品" />
+                <p class="prize-name">纪念品</p>
+              </div>
+              <div class="prize-item">
+                <img src="春节活动-我在家乡过大年/奖品.png" alt="奖品" />
+                <p class="prize-name">书本</p>
+              </div>
+              <div class="prize-item">
+                <img src="春节活动-我在家乡过大年/奖品.png" alt="奖品" />
+                <p class="prize-name">餐具套装</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="task-list">
+        <div class="task-item">
+          <div class="task-info">
+            <p class="task-title">每日收听满 5 分钟</p>
+            <p class="task-progress">您已收听 0 分钟</p>
+            <p class="task-reward">+1 福气</p>
+          </div>
+          <button class="btn-task">去完成</button>
+        </div>
+        <div class="task-item">
+          <div class="task-info">
+            <p class="task-title">累计三天每天收听满 5 分钟</p>
+            <p class="task-progress">已连续收听 0 天</p>
+            <p class="task-reward">+1 福气</p>
+          </div>
+          <button class="btn-task">去完成</button>
+        </div>
+        <div class="task-item">
+          <div class="task-info">
+            <p class="task-title">订阅某某某专辑</p>
+            <p class="task-progress">订阅进度：0/1</p>
+            <p class="task-reward">+1 福气</p>
+          </div>
+          <button class="btn-task">去完成</button>
+        </div>
+        <div class="task-item">
+          <div class="task-info">
+            <p class="task-title">收听指定的专辑</p>
+            <p class="task-progress">您已收听 0 集</p>
+            <p class="task-reward">+1 福气</p>
+          </div>
+          <button class="btn-task">去完成</button>
+        </div>
+        <div class="task-item">
+          <div class="task-info">
+            <p class="task-title">浏览指定的页面</p>
+            <p class="task-progress">今日浏览：0/1</p>
+            <p class="task-reward">+1 福气</p>
+          </div>
+          <button class="btn-task">去完成</button>
+        </div>
+        <div class="task-item">
+          <div class="task-info">
+            <p class="task-title">每日分享页面</p>
+            <p class="task-progress">今日分享：0/1</p>
+            <p class="task-reward">+1 福气</p>
+          </div>
+          <button class="btn-task">去分享</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模块4：乡音送祝福·大咖陪你过新年 -->
+    <section class="section section-stars" id="anchor-stars">
+      <div class="sec-header">
+        <h2>乡音送祝福·大咖陪你过新年</h2>
+        <p class="sec-sub">开席了！相声春晚</p>
+      </div>
+
+      <div class="star-tabs" data-star-group="masters">
+        <div class="star-tab-avatars">
+          <button class="star-avatar-btn active" data-star="guodegang">
+            <div class="star-avatar-wrap">
+              <img src="春节活动-我在家乡过大年/郭德纲.png" alt="郭德纲" class="star-avatar" />
+              <div class="star-window-frame"></div>
+            </div>
+            <span class="star-avatar-name">郭德纲</span>
+          </button>
+          <button class="star-avatar-btn" data-star="wangdan">
+            <div class="star-avatar-wrap">
+              <img src="春节活动-我在家乡过大年/王丹.png" alt="王丹" class="star-avatar" />
+              <div class="star-window-frame"></div>
+            </div>
+            <span class="star-avatar-name">王丹</span>
+          </button>
+          <button class="star-avatar-btn" data-star="xuzhiyuan">
+            <div class="star-avatar-wrap">
+              <img src="春节活动-我在家乡过大年/许知远.png" alt="许知远" class="star-avatar" />
+              <div class="star-window-frame"></div>
+            </div>
+            <span class="star-avatar-name">许知远</span>
+          </button>
+          <button class="star-avatar-btn" data-star="wangmeng">
+            <div class="star-avatar-wrap">
+              <img src="春节活动-我在家乡过大年/王蒙.png" alt="王蒙" class="star-avatar" />
+              <div class="star-window-frame"></div>
+            </div>
+            <span class="star-avatar-name">王蒙</span>
+          </button>
+          <button class="star-avatar-btn" data-star="wangdefeng">
+            <div class="star-avatar-wrap">
+              <img src="春节活动-我在家乡过大年/王德峰.jpg" alt="王德峰" class="star-avatar" />
+              <div class="star-window-frame"></div>
+            </div>
+            <span class="star-avatar-name">王德峰</span>
+          </button>
+        </div>
+
+        <div class="star-detail-panels">
+          <!-- 郭德纲 -->
+          <div class="star-card star-detail active" data-star-panel="guodegang">
+            <div class="star-main">
+              <div class="star-avatar-wrap">
+                <img src="春节活动-我在家乡过大年/郭德纲.png" alt="郭德纲" class="star-avatar" />
+                <div class="star-window-frame"></div>
+              </div>
+              <div class="star-info">
+                <p class="star-name">郭德纲</p>
+                <p class="star-tagline">开席了！相声春晚</p>
+                <div class="star-album-main">
+                  <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面.jpg');background-size:cover;background-position:center;"></div>
+                  <div class="album-info">
+                    <p class="album-title">郭德纲经典相声集</p>
+                    <p class="album-sub">一口乡音，笑满一桌年夜饭</p>
+                  </div>
+                </div>
+                <div class="star-sounds">
+                  <div class="sound-item">
+                    <span class="sound-item-text">推荐声音一 · 年夜饭开场曲</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">推荐声音二 · 全家爆笑一整晚</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">推荐声音三 · 回家路上的相声伴侣</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 王丹 -->
+          <div class="star-card star-detail" data-star-panel="wangdan">
+            <div class="star-main">
+              <div class="star-avatar-wrap">
+                <img src="春节活动-我在家乡过大年/王丹.png" alt="王丹" class="star-avatar" />
+                <div class="star-window-frame"></div>
+              </div>
+              <div class="star-info">
+                <p class="star-name">王丹</p>
+                <p class="star-tagline">开席了！相声春晚</p>
+                <div class="star-album-main">
+                  <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面2.jpeg');background-size:cover;background-position:center;"></div>
+                  <div class="album-info">
+                    <p class="album-title">王丹跨年相声专场</p>
+                    <p class="album-sub">灯火阑珊里听一段好相声</p>
+                  </div>
+                </div>
+                <div class="star-sounds">
+                  <div class="sound-item">
+                    <span class="sound-item-text">推荐声音一 · 家乡腔里的小年夜</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">推荐声音二 · 年味里的烟火气</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">推荐声音三 · 一桌人围坐的笑声</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 许知远 -->
+          <div class="star-card star-detail" data-star-panel="xuzhiyuan">
+            <div class="star-main">
+              <div class="star-avatar-wrap">
+                <img src="春节活动-我在家乡过大年/许知远.png" alt="许知远" class="star-avatar" />
+                <div class="star-window-frame"></div>
+              </div>
+              <div class="star-info">
+                <p class="star-name">许知远</p>
+                <p class="star-tagline">开席了！相声春晚</p>
+                <div class="star-album-main">
+                  <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面3.jpg');background-size:cover;background-position:center;"></div>
+                  <div class="album-info">
+                    <p class="album-title">新年谈谈城与人</p>
+                    <p class="album-sub">在回家的路上聊聊远方与故乡</p>
+                  </div>
+                </div>
+                <div class="star-sounds">
+                  <div class="sound-item">
+                    <span class="sound-item-text">推荐声音一 · 元旦夜的思绪</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">推荐声音二 · 当我们谈论家乡</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">推荐声音三 · 城市与故乡的双重坐标</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 王蒙 -->
+          <div class="star-card star-detail" data-star-panel="wangmeng">
+            <div class="star-main">
+              <div class="star-avatar-wrap">
+                <img src="春节活动-我在家乡过大年/王蒙.png" alt="王蒙" class="star-avatar" />
+                <div class="star-window-frame"></div>
+              </div>
+              <div class="star-info">
+                <p class="star-name">王蒙</p>
+                <p class="star-tagline">开席了！相声春晚</p>
+                <div class="star-album-main">
+                  <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面5.jpg');background-size:cover;background-position:center;"></div>
+                  <div class="album-info">
+                    <p class="album-title">在中国故事里过大年</p>
+                    <p class="album-sub">听一听文字里的中国年</p>
+                  </div>
+                </div>
+                <div class="star-sounds">
+                  <div class="sound-item">
+                    <span class="sound-item-text">推荐声音一 · 春联里的学问</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">推荐声音二 · 年味里的文化香</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">推荐声音三 · 故事里的中国年</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 王德峰 -->
+          <div class="star-card star-detail" data-star-panel="wangdefeng">
+            <div class="star-main">
+              <div class="star-avatar-wrap">
+                <img src="春节活动-我在家乡过大年/王德峰.jpg" alt="王德峰" class="star-avatar" />
+                <div class="star-window-frame"></div>
+              </div>
+              <div class="star-info">
+                <p class="star-name">王德峰</p>
+                <p class="star-tagline">开席了！相声春晚</p>
+                <div class="star-album-main">
+                  <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面11.jpg');background-size:cover;background-position:center;"></div>
+                  <div class="album-info">
+                    <p class="album-title">哲学与生活·新年特辑</p>
+                    <p class="album-sub">在思考中迎接新的一年</p>
+                  </div>
+                </div>
+                <div class="star-sounds">
+                  <div class="sound-item">
+                    <span class="sound-item-text">推荐声音一 · 新年里的哲学思考</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">推荐声音二 · 传统文化中的智慧</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">推荐声音三 · 生活哲学与年味</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 横划更多大咖专辑 -->
+      <div class="h-scroll h-scroll-albums">
+        <div class="album-card">
+          <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面.jpg');background-size:cover;background-position:center;"></div>
+          <div class="album-title">相声春晚精选</div>
+          <span class="tag-chip">爆笑连播</span>
+        </div>
+        <div class="album-card">
+          <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面2.jpeg');background-size:cover;background-position:center;"></div>
+          <div class="album-title">跨年相声马拉松</div>
+          <span class="tag-chip">跨年必听</span>
+        </div>
+        <div class="album-card">
+          <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面3.jpg');background-size:cover;background-position:center;"></div>
+          <div class="album-title">德云社经典专场</div>
+          <span class="tag-chip">德云社</span>
+        </div>
+        <div class="album-card">
+          <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面5.jpg');background-size:cover;background-position:center;"></div>
+          <div class="album-title">小剧场里的年味</div>
+          <span class="tag-chip">线下实录</span>
+        </div>
+        <div class="album-card">
+          <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面6.jpg');background-size:cover;background-position:center;"></div>
+          <div class="album-title">国风说书夜</div>
+          <span class="tag-chip">故事会</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 新模块：限时免费听·精品内容过大年 -->
+    <section class="section section-limited-free" id="anchor-free">
+      <div class="sec-header">
+        <h2>限时免费听·精品内容过大年</h2>
+        <p class="sec-sub">精选好内容限时解锁，一起听个够再回家</p>
+      </div>
+      <div class="card">
+        <div class="free-albums-scroll">
+          <div class="album-card">
+            <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面.jpg');background-size:cover;background-position:center;"></div>
+            <div class="album-title">跨年相声夜</div>
+            <span class="tag-chip">限时免费</span>
+          </div>
+          <div class="album-card">
+            <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面2.jpeg');background-size:cover;background-position:center;"></div>
+            <div class="album-title">春节故事会</div>
+            <span class="tag-chip">家庭共听</span>
+          </div>
+          <div class="album-card">
+            <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面3.jpg');background-size:cover;background-position:center;"></div>
+            <div class="album-title">年味小品集</div>
+            <span class="tag-chip">爆笑连播</span>
+          </div>
+          <div class="album-card">
+            <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面5.jpg');background-size:cover;background-position:center;"></div>
+            <div class="album-title">回家路上的电台</div>
+            <span class="tag-chip">通勤推荐</span>
+          </div>
+          <div class="album-card">
+            <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面6.jpg');background-size:cover;background-position:center;"></div>
+            <div class="album-title">深夜睡前听一听</div>
+            <span class="tag-chip">助眠好声</span>
+          </div>
+          <div class="album-card">
+            <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面7.jpg');background-size:cover;background-position:center;"></div>
+            <div class="album-title">城市人间烟火</div>
+            <span class="tag-chip">城市故事</span>
+          </div>
+          <div class="album-card">
+            <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面8.jpeg');background-size:cover;background-position:center;"></div>
+            <div class="album-title">一路向南去看海</div>
+            <span class="tag-chip">旅行随听</span>
+          </div>
+          <div class="album-card">
+            <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面9.jpg');background-size:cover;background-position:center;"></div>
+            <div class="album-title">故乡在远方</div>
+            <span class="tag-chip">乡愁特辑</span>
+          </div>
+          <div class="album-card">
+            <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面00.jpg');background-size:cover;background-position:center;"></div>
+            <div class="album-title">孩子的寒假睡前故事</div>
+            <span class="tag-chip">亲子共读</span>
+          </div>
+          <div class="album-card">
+            <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面02.jpg');background-size:cover;background-position:center;"></div>
+            <div class="album-title">新一年职场充电站</div>
+            <span class="tag-chip">自我提升</span>
+          </div>
+          <div class="album-card">
+            <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面03.jpeg');background-size:cover;background-position:center;"></div>
+            <div class="album-title">新年理财小课堂</div>
+            <span class="tag-chip">实用干货</span>
+          </div>
+          <div class="album-card">
+            <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面04.jpeg');background-size:cover;background-position:center;"></div>
+            <div class="album-title">和父母一起听经典</div>
+            <span class="tag-chip">长辈友好</span>
+          </div>
+          <div class="album-card">
+            <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面05.jpg');background-size:cover;background-position:center;"></div>
+            <div class="album-title">新年新知识</div>
+            <span class="tag-chip">轻松涨见识</span>
+          </div>
+          <div class="album-card">
+            <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面06.jpg');background-size:cover;background-position:center;"></div>
+            <div class="album-title">节后收心指南</div>
+            <span class="tag-chip">假期过渡</span>
+          </div>
+          <div class="album-card">
+            <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面07.jpeg');background-size:cover;background-position:center;"></div>
+            <div class="album-title">新年新目标清单</div>
+            <span class="tag-chip">年度规划</span>
+          </div>
+          <div class="album-card">
+            <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面08.jpeg');background-size:cover;background-position:center;"></div>
+            <div class="album-title">和朋友一起哈哈哈</div>
+            <span class="tag-chip">聚会 BGM</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模块5：一城一乡音·听见我的家乡 -->
+    <section class="section section-cityvoice" id="anchor-cityvoice">
+      <div class="sec-header">
+        <h2>一城一乡音·听见我的家乡</h2>
+        <p class="sec-sub">用耳朵逛一遍家乡，在声音里重逢熟悉街巷</p>
+      </div>
+      <div class="card video-card">
+        <div class="badge">家乡介绍视频</div>
+        <div class="video-wrapper" style="margin-top:6px;">
+          <!-- 方式1：如果只是封面，可用 img；如果要真实视频，用 video + poster -->
+          <!-- 这里使用 video，封面采用 上海.png -->
+          <img src="春节活动-我在家乡过大年/上海.png" alt="上海 · 家乡介绍" />
+        </div>
+        <p class="video-desc">黄浦江边的灯火，弄堂里的乡音，耳机一戴，就回到熟悉的上海年味里。</p>
+      </div>
+
+      <!-- 相关专辑 横滑 6 张 -->
+      <div class="h-scroll">
+        <div class="album-card">
+          <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面7.jpg');background-size:cover;background-position:center;"></div>
+          <div class="album-title">上海故事·弄堂里的童年</div>
+          <span class="tag-chip">城市故事</span>
+        </div>
+        <div class="album-card">
+          <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面8.jpeg');background-size:cover;background-position:center;"></div>
+          <div class="album-title">魔都夜色·江边电台</div>
+          <span class="tag-chip">夜晚电台</span>
+        </div>
+        <div class="album-card">
+          <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面9.jpg');background-size:cover;background-position:center;"></div>
+          <div class="album-title">海派文化听书集</div>
+          <span class="tag-chip">人文风情</span>
+        </div>
+        <div class="album-card">
+          <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面00.jpg');background-size:cover;background-position:center;"></div>
+          <div class="album-title">烟火气里的早餐摊</div>
+          <span class="tag-chip">生活纪实</span>
+        </div>
+        <div class="album-card">
+          <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面02.jpg');background-size:cover;background-position:center;"></div>
+          <div class="album-title">各地方言里的春节</div>
+          <span class="tag-chip">乡音专辑</span>
+        </div>
+        <div class="album-card">
+          <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面03.jpeg');background-size:cover;background-position:center;"></div>
+          <div class="album-title">听见中国·一城一声</div>
+          <span class="tag-chip">全国联播</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模块6：国风大典·喜马过大年 -->
+    <section class="section section-guofeng" id="anchor-guofeng">
+      <div class="sec-header">
+        <h2>国风大典· 喜马过大年</h2>
+        <p class="sec-sub">让耳朵先一步抵达线下现场，在国风乐声中迎新年</p>
+      </div>
+      <div class="card video-card">
+        <div class="badge">线下视频回放</div>
+        <div class="video-wrapper" style="margin-top:6px;">
+          <!-- 插入文档中的线下视频demo -->
+          <video
+            controls
+            playsinline
+            poster="春节活动-我在家乡过大年/线下活动.png"
+          >
+            <source src="春节活动-我在家乡过大年/线下视频demo.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <p class="video-desc">鼓声起、箫声鸣，在国风大典里，与千年文明一起跨年。</p>
+      </div>
+    </section>
+
+    <!-- 模块7：城市漫游·细品文化渊源 -->
+    <section class="section section-citytour" id="anchor-citytour">
+      <div class="sec-header">
+        <h2>城市漫游· 细品文化渊源</h2>
+        <p class="sec-sub">在故事与声音里，走过一城又一城的新年街巷</p>
+      </div>
+
+      <div class="tabs" data-tab-group="city-tour">
+        <div class="tab-headers">
+          <button class="tab-header active" data-tab="plateau">高原雪乡</button>
+          <button class="tab-header" data-tab="jiangnan">江南水乡</button>
+          <button class="tab-header" data-tab="lingnan">岭南风情</button>
+          <button class="tab-header" data-tab="ancient">千年古都</button>
+        </div>
+        <div class="tab-panels">
+          <!-- 高原雪乡 -->
+          <div class="tab-panel active" data-tab-panel="plateau">
+            <p class="tab-desc">赏一方山水听名篇佳作，在银装素裹的世界里，跟着声音走进高原雪乡。</p>
+            <div class="h-scroll">
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面04.jpeg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">雪山脚下的牧歌</div>
+                <span class="tag-chip">人文地理</span>
+              </div>
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面05.jpg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">雪夜围炉听长诗</div>
+                <span class="tag-chip">诗歌朗诵</span>
+              </div>
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面06.jpg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">走进雪乡小镇</div>
+                <span class="tag-chip">旅行随记</span>
+              </div>
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面07.jpeg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">高原上的新年烟火</div>
+                <span class="tag-chip">新年特辑</span>
+              </div>
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面08.jpeg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">雪线之上·民间故事</div>
+                <span class="tag-chip">民间传说</span>
+              </div>
+            </div>
+
+            <p class="tab-bottom-title">游一方高原雪乡，听城市韵律</p>
+            <div>
+              <div class="sound-item">
+                <span class="sound-item-text">雪夜电台 · 雪落在高原的声音</span>
+                <button class="sound-item-btn"></button>
+              </div>
+              <div class="sound-item">
+                <span class="sound-item-text">高原清晨 · 太阳升起的那一刻</span>
+                <button class="sound-item-btn"></button>
+              </div>
+              <div class="sound-item">
+                <span class="sound-item-text">围炉夜话 · 雪乡的年三十</span>
+                <button class="sound-item-btn"></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 江南水乡 -->
+          <div class="tab-panel" data-tab-panel="jiangnan">
+            <p class="tab-desc">赏一方山水听名篇佳作，小桥、流水、灯影，把江南水乡装进行囊。</p>
+            <div class="h-scroll">
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面09.jpeg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">小桥流水·江南旧事</div>
+                <span class="tag-chip">人文随笔</span>
+              </div>
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面11.jpg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">吴侬软语里的新年</div>
+                <span class="tag-chip">方言专辑</span>
+              </div>
+          <div class="album-card">
+            <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面12.jpeg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">水乡夜话·灯火阑珊</div>
+                <span class="tag-chip">夜听电台</span>
+              </div>
+              <div class="album-card">
+            <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面13.jpeg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">江南书局·名篇赏读</div>
+                <span class="tag-chip">名篇佳作</span>
+              </div>
+              <div class="album-card">
+            <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面14.jpg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">乌篷船上的评弹</div>
+                <span class="tag-chip">戏曲评弹</span>
+              </div>
+            </div>
+
+            <p class="tab-bottom-title">游一方江南水乡，听城市韵律</p>
+            <div>
+              <div class="sound-item">
+                <span class="sound-item-text">水巷晨曲 · 一城醒来的声音</span>
+                <button class="sound-item-btn"></button>
+              </div>
+              <div class="sound-item">
+                <span class="sound-item-text">石板桥上 · 脚步与雨声</span>
+                <button class="sound-item-btn"></button>
+              </div>
+              <div class="sound-item">
+                <span class="sound-item-text">古镇深巷 · 茶馆里的说书人</span>
+                <button class="sound-item-btn"></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 岭南风情 -->
+          <div class="tab-panel" data-tab-panel="lingnan">
+            <p class="tab-desc">赏一方山水听名篇佳作，在岭南年味的烟火气里邂逅暖冬阳光。</p>
+            <div class="h-scroll">
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面12.jpeg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">老广过年·年味特辑</div>
+                <span class="tag-chip">城市美食</span>
+              </div>
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面13.jpeg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">骑楼下的旧时光</div>
+                <span class="tag-chip">城市记忆</span>
+              </div>
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面14.jpg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">岭南粤语电台</div>
+                <span class="tag-chip">粤语频道</span>
+              </div>
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面.jpg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">花城花市·新年行</div>
+                <span class="tag-chip">节日特辑</span>
+              </div>
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面2.jpeg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">珠江夜游·声光交织</div>
+                <span class="tag-chip">夜景漫游</span>
+              </div>
+            </div>
+
+            <p class="tab-bottom-title">游一方岭南风情，听城市韵律</p>
+            <div>
+              <div class="sound-item">
+                <span class="sound-item-text">花市巡礼 · 一条街的花香</span>
+                <button class="sound-item-btn"></button>
+              </div>
+              <div class="sound-item">
+                <span class="sound-item-text">荔枝湾畔 · 水影中的古村</span>
+                <button class="sound-item-btn"></button>
+              </div>
+              <div class="sound-item">
+                <span class="sound-item-text">广府年夜饭 · 一桌菜的故事</span>
+                <button class="sound-item-btn"></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 千年古都 -->
+          <div class="tab-panel" data-tab-panel="ancient">
+            <p class="tab-desc">赏一方山水听名篇佳作，在城墙与古街之间，听见千年古都的回响。</p>
+            <div class="h-scroll">
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面3.jpg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">古都夜行·城墙下的脚步声</div>
+                <span class="tag-chip">城市纪录</span>
+              </div>
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面5.jpg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">博物馆里的新年</div>
+                <span class="tag-chip">文化典藏</span>
+              </div>
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面6.jpg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">朝代更迭·历史听书</div>
+                <span class="tag-chip">历史长河</span>
+              </div>
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面7.jpg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">古城巷陌·烟火人间</div>
+                <span class="tag-chip">城市生活</span>
+              </div>
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面8.jpeg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">晨钟暮鼓·寺庙钟声</div>
+                <span class="tag-chip">声景采集</span>
+              </div>
+            </div>
+
+            <p class="tab-bottom-title">游一方千年古都，听城市韵律</p>
+            <div>
+              <div class="sound-item">
+                <span class="sound-item-text">巷口胡同 · 大年初一的第一声问候</span>
+                <button class="sound-item-btn"></button>
+              </div>
+              <div class="sound-item">
+                <span class="sound-item-text">古城钟声 · 从清晨敲到夜里</span>
+                <button class="sound-item-btn"></button>
+              </div>
+              <div class="sound-item">
+                <span class="sound-item-text">城门口的集市 · 人群与叫卖声</span>
+                <button class="sound-item-btn"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模块8：全家听乐呵·爆笑迎新春 -->
+    <section class="section section-family" id="anchor-family">
+      <div class="sec-header">
+        <h2>全家听乐呵·爆笑迎新春</h2>
+        <p class="sec-sub">小品大全、经典相声、脱口秀大会，主打一个合家欢</p>
+      </div>
+
+      <div class="tabs" data-tab-group="family-fun">
+        <div class="tab-headers">
+          <button class="tab-header active" data-tab="sketch">小品大全</button>
+          <button class="tab-header" data-tab="xiangsheng">经典相声</button>
+          <button class="tab-header" data-tab="talkshow">脱口秀大会存量</button>
+        </div>
+        <div class="tab-panels">
+          <!-- 小品大全 -->
+          <div class="tab-panel active" data-tab-panel="sketch">
+            <div class="h-scroll">
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面04.jpeg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">春节小品大联欢</div>
+                <span class="tag-chip">春晚同款</span>
+              </div>
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面05.jpg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">年代小品经典回顾</div>
+                <span class="tag-chip">全家回忆杀</span>
+              </div>
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面06.jpg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">爆笑家庭小品集</div>
+                <span class="tag-chip">亲子必听</span>
+              </div>
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面07.jpeg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">乡村舞台上的年夜笑声</div>
+                <span class="tag-chip">乡村春晚</span>
+              </div>
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面08.jpeg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">反转小品·笑中带泪</div>
+                <span class="tag-chip">温情故事</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 经典相声 -->
+          <div class="tab-panel" data-tab-panel="xiangsheng">
+            <div class="h-scroll">
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面09.jpeg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">老味道经典相声馆</div>
+                <span class="tag-chip">爷爷也爱听</span>
+              </div>
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面11.jpg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">新派相声跨年夜</div>
+                <span class="tag-chip">年轻人挚爱</span>
+              </div>
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面12.jpeg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">德云社跨年大合辑</div>
+                <span class="tag-chip">热门社团</span>
+              </div>
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面13.jpeg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">方言相声·听懂就笑</div>
+                <span class="tag-chip">地方特色</span>
+              </div>
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面14.jpg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">深夜段子馆</div>
+                <span class="tag-chip">下饭必备</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 脱口秀大会存量 -->
+          <div class="tab-panel" data-tab-panel="talkshow">
+            <div class="h-scroll">
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面00.jpg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">脱口秀大会 · 精彩回放</div>
+                <span class="tag-chip">人气选手</span>
+              </div>
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面02.jpg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">办公室段子 · 打工人专属</div>
+                <span class="tag-chip">打工松弛</span>
+              </div>
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面03.jpeg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">过年回家话题合集</div>
+                <span class="tag-chip">亲戚问答</span>
+              </div>
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面04.jpeg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">社恐春节生存指南</div>
+                <span class="tag-chip">社恐福音</span>
+              </div>
+              <div class="album-card">
+                <div class="album-cover" style="background-image:url('春节活动-我在家乡过大年/专辑封面05.jpg');background-size:cover;background-position:center;"></div>
+                <div class="album-title">深夜笑场 · 单口专场</div>
+                <span class="tag-chip">熬夜搭子</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模块9：欢聚一堂·听见每一层心意 -->
+    <section class="section section-podcast" id="anchor-podcast">
+      <div class="sec-header">
+        <h2>欢聚一堂·听见每一层心意</h2>
+        <p class="sec-sub">围坐在一起，聊聊过年那些事儿</p>
+      </div>
+
+      <div class="topic-carousel">
+        <div class="topic-carousel-wrapper">
+          <div class="topic-carousel-track" id="topicCarousel">
+            <div class="topic-carousel-item">
+              <div class="topic-item">
+                <p class="topic-tag">春节你最想看的电影是什么？</p>
+                <p class="topic-desc">今年的跨年档，你更想和谁一起看哪一部？在声音里先剧透一点温暖。</p>
+                <div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">播客 · 今年你最想看的春节档电影</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">聊天 · 那些陪我们长大的贺岁片</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">回忆 · 和家人一起看的第一部贺岁片</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">影评 · 春节档电影大盘点</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">分享 · 我最难忘的春节观影体验</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">讨论 · 今年春节档你最期待哪一部</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">回顾 · 经典贺岁片里的年味</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">推荐 · 适合全家一起看的电影</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="topic-carousel-item">
+              <div class="topic-item">
+                <p class="topic-tag">你"被催"的最高纪录是几连问？</p>
+                <p class="topic-desc">工作、对象、房子、孩子，被催到头大的你，也可以在这里获得一点安慰。</p>
+                <div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">聊天 · 春节被催婚现场连线</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">吐槽 · 如何优雅躲过亲戚提问</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">经验 · 写给爸妈的一封小长信</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">故事 · 那些年被催的经典瞬间</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">分享 · 我是如何应对催婚的</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">讨论 · 催婚背后的家庭关系</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">建议 · 和父母沟通的正确姿势</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">共鸣 · 被催族的春节生存指南</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="topic-carousel-item">
+              <div class="topic-item">
+                <p class="topic-tag">哪一刻让你突然觉得自己"长大了"？</p>
+                <p class="topic-desc">换你为家人准备年夜饭、包红包的那一刻，声音记录下这些温柔瞬间。</p>
+                <div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">故事 · 第一次给爸妈发红包</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">日记 · 从被照顾到想去照顾别人</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">记录 · 那一年我成了"家里的大人"</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">感悟 · 成长就在一瞬间</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">回忆 · 第一次为家人做年夜饭</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">分享 · 我的成长瞬间</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">思考 · 什么是真正的长大</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                  <div class="sound-item">
+                    <span class="sound-item-text">温暖 · 那些让我长大的小事</span>
+                    <button class="sound-item-btn"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="topic-carousel-dots">
+          <button class="topic-dot active" data-slide="0"></button>
+          <button class="topic-dot" data-slide="1"></button>
+          <button class="topic-dot" data-slide="2"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模块10：新年许愿，开开心心过大年 -->
+    <section class="section section-wish" id="anchor-wish">
+      <div class="sec-header">
+        <h2>新年许愿，开开心心过大年</h2>
+        <p class="sec-sub">把对新一年的期许，藏进一条小小的心愿里</p>
+      </div>
+
+      <div class="wish-banner">
+        <!-- 如果你的文件名是“许愿瓶.png”，这里改成对应名字即可 -->
+        <img src="春节活动-我在家乡过大年/许愿瓶.png" alt="新年许愿" />
+        <div class="wish-overlay-text">
+          <h3>写下一个愿望，装进家乡的风里</h3>
+          <p>点一点，投递你的新年心愿</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模块11：更多精彩，值得探索 -->
+    <section class="section section-more" id="anchor-more">
+      <div class="sec-header">
+        <h2>更多精彩，值得探索</h2>
+      </div>
+      <div class="tabs" data-tab-group="more-tabs">
+        <div class="more-tabs-grid">
+          <button class="more-tab-header active" data-tab="novel">网文小说</button>
+          <button class="more-tab-header" data-tab="xiangsheng">相声评书</button>
+          <button class="more-tab-header" data-tab="book">出版图书</button>
+          <button class="more-tab-header" data-tab="history">人文历史</button>
+          <button class="more-tab-header" data-tab="movie">影视热播</button>
+          <button class="more-tab-header" data-tab="talk">趣味漫谈</button>
+          <button class="more-tab-header" data-tab="children">儿童故事</button>
+          <button class="more-tab-header" data-tab="growth">个人成长</button>
+        </div>
+        <div class="tab-panels">
+          <!-- 网文小说 -->
+          <div class="tab-panel active" data-tab-panel="novel">
+            <div class="more-album-list">
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面.jpg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">玄幻小说精选集</div>
+                  <div class="more-album-desc">经典玄幻小说合集，带你进入奇幻世界</div>
+                  <div class="more-album-meta">
+                    <span>播放量 128.5万</span>
+                    <span>·</span>
+                    <span>120集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">订阅</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面2.jpeg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">都市言情小说</div>
+                  <div class="more-album-desc">现代都市情感故事，温暖治愈</div>
+                  <div class="more-album-meta">
+                    <span>播放量 95.2万</span>
+                    <span>·</span>
+                    <span>80集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">播放</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面3.jpg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">穿越重生小说</div>
+                  <div class="more-album-desc">穿越时空的精彩故事，重写人生</div>
+                  <div class="more-album-meta">
+                    <span>播放量 156.8万</span>
+                    <span>·</span>
+                    <span>150集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">订阅</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面5.jpg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">悬疑推理小说</div>
+                  <div class="more-album-desc">烧脑推理，层层递进的悬疑故事</div>
+                  <div class="more-album-meta">
+                    <span>播放量 78.3万</span>
+                    <span>·</span>
+                    <span>60集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">播放</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面6.jpg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">历史架空小说</div>
+                  <div class="more-album-desc">架空历史背景，演绎不同朝代</div>
+                  <div class="more-album-meta">
+                    <span>播放量 112.4万</span>
+                    <span>·</span>
+                    <span>100集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">订阅</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面7.jpg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">科幻未来小说</div>
+                  <div class="more-album-desc">未来世界的科幻想象，探索未知</div>
+                  <div class="more-album-meta">
+                    <span>播放量 89.6万</span>
+                    <span>·</span>
+                    <span>90集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">播放</button>
+              </div>
+            </div>
+          </div>
+          <!-- 其他tab内容类似，为了节省空间，我只展示一个完整的 -->
+          <div class="tab-panel" data-tab-panel="xiangsheng">
+            <div class="more-album-list">
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面8.jpeg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">经典相声合集</div>
+                  <div class="more-album-desc">传统相声经典作品，笑声不断</div>
+                  <div class="more-album-meta">
+                    <span>播放量 256.3万</span>
+                    <span>·</span>
+                    <span>200集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">订阅</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面9.jpg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">评书连播</div>
+                  <div class="more-album-desc">经典评书作品，引人入胜</div>
+                  <div class="more-album-meta">
+                    <span>播放量 189.7万</span>
+                    <span>·</span>
+                    <span>150集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">播放</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面00.jpg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">单口相声</div>
+                  <div class="more-album-desc">一人一桌，说学逗唱</div>
+                  <div class="more-album-meta">
+                    <span>播放量 145.2万</span>
+                    <span>·</span>
+                    <span>120集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">订阅</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面02.jpg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">对口相声</div>
+                  <div class="more-album-desc">两人搭档，默契配合</div>
+                  <div class="more-album-meta">
+                    <span>播放量 178.5万</span>
+                    <span>·</span>
+                    <span>130集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">播放</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面03.jpeg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">群口相声</div>
+                  <div class="more-album-desc">多人合作，热闹非凡</div>
+                  <div class="more-album-meta">
+                    <span>播放量 132.8万</span>
+                    <span>·</span>
+                    <span>100集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">订阅</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面04.jpeg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">传统评书</div>
+                  <div class="more-album-desc">传统评书艺术，传承经典</div>
+                  <div class="more-album-meta">
+                    <span>播放量 167.4万</span>
+                    <span>·</span>
+                    <span>180集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">播放</button>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" data-tab-panel="book">
+            <div class="more-album-list">
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面05.jpg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">经典文学名著</div>
+                  <div class="more-album-desc">世界文学经典作品，陶冶情操</div>
+                  <div class="more-album-meta">
+                    <span>播放量 203.6万</span>
+                    <span>·</span>
+                    <span>180集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">订阅</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面06.jpg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">现代文学作品</div>
+                  <div class="more-album-desc">当代优秀文学作品，贴近生活</div>
+                  <div class="more-album-meta">
+                    <span>播放量 167.9万</span>
+                    <span>·</span>
+                    <span>140集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">播放</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面07.jpeg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">畅销书精选</div>
+                  <div class="more-album-desc">热门畅销书籍，紧跟潮流</div>
+                  <div class="more-album-meta">
+                    <span>播放量 245.3万</span>
+                    <span>·</span>
+                    <span>160集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">订阅</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面08.jpeg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">社科类图书</div>
+                  <div class="more-album-desc">社会科学类书籍，拓展视野</div>
+                  <div class="more-album-meta">
+                    <span>播放量 134.7万</span>
+                    <span>·</span>
+                    <span>110集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">播放</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面09.jpeg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">传记类图书</div>
+                  <div class="more-album-desc">名人传记故事，汲取智慧</div>
+                  <div class="more-album-meta">
+                    <span>播放量 189.2万</span>
+                    <span>·</span>
+                    <span>130集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">订阅</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面11.jpg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">经管类图书</div>
+                  <div class="more-album-desc">经济管理类书籍，提升能力</div>
+                  <div class="more-album-meta">
+                    <span>播放量 156.8万</span>
+                    <span>·</span>
+                    <span>120集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">播放</button>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" data-tab-panel="history">
+            <div class="more-album-list">
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面12.jpeg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">中国历史</div>
+                  <div class="more-album-desc">中华五千年历史，源远流长</div>
+                  <div class="more-album-meta">
+                    <span>播放量 278.5万</span>
+                    <span>·</span>
+                    <span>220集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">订阅</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面13.jpeg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">世界历史</div>
+                  <div class="more-album-desc">全球历史进程，开阔眼界</div>
+                  <div class="more-album-meta">
+                    <span>播放量 234.1万</span>
+                    <span>·</span>
+                    <span>200集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">播放</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面14.jpg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">历史人物</div>
+                  <div class="more-album-desc">历史名人传记，学习智慧</div>
+                  <div class="more-album-meta">
+                    <span>播放量 198.7万</span>
+                    <span>·</span>
+                    <span>170集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">订阅</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面.jpg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">历史事件</div>
+                  <div class="more-album-desc">重大历史事件，了解过去</div>
+                  <div class="more-album-meta">
+                    <span>播放量 167.3万</span>
+                    <span>·</span>
+                    <span>150集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">播放</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面2.jpeg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">历史文化</div>
+                  <div class="more-album-desc">历史文化传承，品味经典</div>
+                  <div class="more-album-meta">
+                    <span>播放量 145.9万</span>
+                    <span>·</span>
+                    <span>130集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">订阅</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面3.jpg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">历史地理</div>
+                  <div class="more-album-desc">历史地理变迁，探索奥秘</div>
+                  <div class="more-album-meta">
+                    <span>播放量 123.6万</span>
+                    <span>·</span>
+                    <span>110集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">播放</button>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" data-tab-panel="movie">
+            <div class="more-album-list">
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面5.jpg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">热播剧集</div>
+                  <div class="more-album-desc">当下热门剧集，追剧不停</div>
+                  <div class="more-album-meta">
+                    <span>播放量 312.4万</span>
+                    <span>·</span>
+                    <span>250集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">订阅</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面6.jpg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">经典电影</div>
+                  <div class="more-album-desc">经典电影作品，回味无穷</div>
+                  <div class="more-album-meta">
+                    <span>播放量 289.7万</span>
+                    <span>·</span>
+                    <span>230集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">播放</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面7.jpg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">影视原声</div>
+                  <div class="more-album-desc">影视原声音乐，沉浸体验</div>
+                  <div class="more-album-meta">
+                    <span>播放量 256.3万</span>
+                    <span>·</span>
+                    <span>200集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">订阅</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面8.jpeg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">影视解说</div>
+                  <div class="more-album-desc">精彩影视解说，深度解析</div>
+                  <div class="more-album-meta">
+                    <span>播放量 223.8万</span>
+                    <span>·</span>
+                    <span>180集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">播放</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面9.jpg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">影视评论</div>
+                  <div class="more-album-desc">专业影视评论，独到见解</div>
+                  <div class="more-album-meta">
+                    <span>播放量 198.5万</span>
+                    <span>·</span>
+                    <span>160集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">订阅</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面00.jpg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">影视幕后</div>
+                  <div class="more-album-desc">影视制作幕后，了解创作</div>
+                  <div class="more-album-meta">
+                    <span>播放量 176.2万</span>
+                    <span>·</span>
+                    <span>140集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">播放</button>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" data-tab-panel="talk">
+            <div class="more-album-list">
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面02.jpg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">趣味聊天</div>
+                  <div class="more-album-desc">轻松有趣的聊天内容，放松心情</div>
+                  <div class="more-album-meta">
+                    <span>播放量 187.3万</span>
+                    <span>·</span>
+                    <span>150集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">订阅</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面03.jpeg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">轻松漫谈</div>
+                  <div class="more-album-desc">轻松愉快的漫谈节目，治愈心灵</div>
+                  <div class="more-album-meta">
+                    <span>播放量 165.8万</span>
+                    <span>·</span>
+                    <span>130集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">播放</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面04.jpeg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">生活趣事</div>
+                  <div class="more-album-desc">生活中的有趣故事，分享快乐</div>
+                  <div class="more-album-meta">
+                    <span>播放量 154.2万</span>
+                    <span>·</span>
+                    <span>120集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">订阅</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面05.jpg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">话题讨论</div>
+                  <div class="more-album-desc">热门话题讨论，思想碰撞</div>
+                  <div class="more-album-meta">
+                    <span>播放量 142.7万</span>
+                    <span>·</span>
+                    <span>110集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">播放</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面06.jpg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">轻松一刻</div>
+                  <div class="more-album-desc">轻松幽默的内容，缓解压力</div>
+                  <div class="more-album-meta">
+                    <span>播放量 131.5万</span>
+                    <span>·</span>
+                    <span>100集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">订阅</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面07.jpeg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">幽默段子</div>
+                  <div class="more-album-desc">搞笑幽默段子，开怀大笑</div>
+                  <div class="more-album-meta">
+                    <span>播放量 119.8万</span>
+                    <span>·</span>
+                    <span>90集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">播放</button>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" data-tab-panel="children">
+            <div class="more-album-list">
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面08.jpeg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">童话故事</div>
+                  <div class="more-album-desc">经典童话故事，陪伴成长</div>
+                  <div class="more-album-meta">
+                    <span>播放量 298.6万</span>
+                    <span>·</span>
+                    <span>240集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">订阅</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面09.jpeg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">儿童绘本</div>
+                  <div class="more-album-desc">精美绘本故事，培养阅读</div>
+                  <div class="more-album-meta">
+                    <span>播放量 267.4万</span>
+                    <span>·</span>
+                    <span>220集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">播放</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面11.jpg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">睡前故事</div>
+                  <div class="more-album-desc">温馨睡前故事，助眠好声</div>
+                  <div class="more-album-meta">
+                    <span>播放量 245.9万</span>
+                    <span>·</span>
+                    <span>200集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">订阅</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面12.jpeg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">儿童科普</div>
+                  <div class="more-album-desc">趣味科普知识，激发兴趣</div>
+                  <div class="more-album-meta">
+                    <span>播放量 223.7万</span>
+                    <span>·</span>
+                    <span>180集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">播放</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面13.jpeg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">儿童教育</div>
+                  <div class="more-album-desc">儿童教育内容，寓教于乐</div>
+                  <div class="more-album-meta">
+                    <span>播放量 201.3万</span>
+                    <span>·</span>
+                    <span>160集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">订阅</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面14.jpg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">儿童音乐</div>
+                  <div class="more-album-desc">儿童音乐作品，培养乐感</div>
+                  <div class="more-album-meta">
+                    <span>播放量 189.5万</span>
+                    <span>·</span>
+                    <span>140集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">播放</button>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" data-tab-panel="growth">
+            <div class="more-album-list">
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面.jpg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">自我提升</div>
+                  <div class="more-album-desc">个人能力提升，持续成长</div>
+                  <div class="more-album-meta">
+                    <span>播放量 234.8万</span>
+                    <span>·</span>
+                    <span>190集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">订阅</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面2.jpeg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">职场技能</div>
+                  <div class="more-album-desc">职场必备技能，提升竞争力</div>
+                  <div class="more-album-meta">
+                    <span>播放量 212.5万</span>
+                    <span>·</span>
+                    <span>170集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">播放</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面3.jpg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">心理成长</div>
+                  <div class="more-album-desc">心理健康成长，内心强大</div>
+                  <div class="more-album-meta">
+                    <span>播放量 198.3万</span>
+                    <span>·</span>
+                    <span>160集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">订阅</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面5.jpg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">学习方法</div>
+                  <div class="more-album-desc">高效学习方法，事半功倍</div>
+                  <div class="more-album-meta">
+                    <span>播放量 186.7万</span>
+                    <span>·</span>
+                    <span>150集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">播放</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面6.jpg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">时间管理</div>
+                  <div class="more-album-desc">时间管理技巧，高效生活</div>
+                  <div class="more-album-meta">
+                    <span>播放量 174.2万</span>
+                    <span>·</span>
+                    <span>140集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">订阅</button>
+              </div>
+              <div class="more-album-item">
+                <img src="春节活动-我在家乡过大年/专辑封面7.jpg" alt="专辑" class="more-album-cover" />
+                <div class="more-album-info">
+                  <div class="more-album-title">习惯养成</div>
+                  <div class="more-album-desc">好习惯养成，改变人生</div>
+                  <div class="more-album-meta">
+                    <span>播放量 162.9万</span>
+                    <span>·</span>
+                    <span>130集</span>
+                  </div>
+                </div>
+                <button class="more-album-btn">播放</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-footer">
+      <div style="margin-bottom:8px;">
+        听见家乡，听见年味 · 我在家乡过大年
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;justify-content:center;margin-top:6px;">
+        <div style="flex:1;max-width:260px;display:flex;align-items:center;background:rgba(255,248,230,.12);border-radius:999px;border:1px solid rgba(255,215,122,.6);padding:6px 10px;">
+          <span style="font-size:12px;color:#ffeccc;opacity:.9;flex:1;text-align:left;">我在家乡过大年</span>
+          <span style="font-size:12px;color:#ffd77a;">🔍</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 简单 Tab 切换逻辑
+    document.querySelectorAll(".tabs").forEach(function (tabs) {
+      var group = tabs.getAttribute("data-tab-group");
+      if (!group) return;
+
+      var headers = tabs.querySelectorAll(".tab-header");
+      var panels = tabs.querySelectorAll(".tab-panel");
+
+      headers.forEach(function (header) {
+        header.addEventListener("click", function () {
+          var target = header.getAttribute("data-tab");
+          if (!target) return;
+
+          headers.forEach(function (h) { h.classList.remove("active"); });
+          panels.forEach(function (p) { p.classList.remove("active"); });
+
+          header.classList.add("active");
+          var panel = tabs.querySelector('.tab-panel[data-tab-panel="' + target + '"]');
+          if (panel) panel.classList.add("active");
+        });
+      });
+    });
+
+    // 大咖头像 Tab 切换
+    document.querySelectorAll(".star-tabs").forEach(function (starTabs) {
+      var avatarBtns = starTabs.querySelectorAll(".star-avatar-btn");
+      var panels = starTabs.querySelectorAll(".star-detail");
+
+      avatarBtns.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var target = btn.getAttribute("data-star");
+          if (!target) return;
+
+          avatarBtns.forEach(function (b) { b.classList.remove("active"); });
+          panels.forEach(function (p) { p.classList.remove("active"); });
+
+          btn.classList.add("active");
+          var panel = starTabs.querySelector('.star-detail[data-star-panel="' + target + '"]');
+          if (panel) panel.classList.add("active");
+        });
+      });
+    });
+
+    // 欢聚一堂轮播功能
+    var carousel = document.getElementById('topicCarousel');
+    var dots = document.querySelectorAll('.topic-dot');
+    var currentSlide = 0;
+    var totalSlides = 3;
+
+    if (carousel && dots.length > 0) {
+      function showSlide(index) {
+        if (index < 0) index = totalSlides - 1;
+        if (index >= totalSlides) index = 0;
+        currentSlide = index;
+        carousel.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+        dots.forEach(function(dot, i) {
+          dot.classList.toggle('active', i === currentSlide);
+        });
+      }
+
+      dots.forEach(function(dot, index) {
+        dot.addEventListener('click', function() {
+          showSlide(index);
+        });
+      });
+
+      // 自动轮播（可选）
+      // setInterval(function() {
+      //   showSlide(currentSlide + 1);
+      // }, 5000);
+    }
+
+    // 很多精彩模块 Tab 切换
+    var moreTabs = document.querySelector('[data-tab-group="more-tabs"]');
+    if (moreTabs) {
+      var moreHeaders = moreTabs.querySelectorAll('.more-tab-header');
+      var morePanels = moreTabs.querySelectorAll('.tab-panel');
+
+      moreHeaders.forEach(function(header) {
+        header.addEventListener('click', function() {
+          var target = header.getAttribute('data-tab');
+          if (!target) return;
+
+          moreHeaders.forEach(function(h) { h.classList.remove('active'); });
+          morePanels.forEach(function(p) { p.classList.remove('active'); });
+
+          header.classList.add('active');
+          var panel = moreTabs.querySelector('.tab-panel[data-tab-panel="' + target + '"]');
+          if (panel) panel.classList.add('active');
+        });
+      });
+    }
+
+    // 如需为"视频封面 + 自定义播放按钮"做点击交互，可在此补充 JS
+  </script>
+</body>
+</html>
+
+
